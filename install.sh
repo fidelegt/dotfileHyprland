@@ -60,20 +60,25 @@ echo "Instalando swww..."
 mkdir -p ~/.cache/swww
 cd ~/.cache/swww
 
-LATEST=$(curl -s https://api.github.com/repos/LGFae/swww/releases/latest | grep tag_name | cut -d '"' -f4)
+LATEST=$(curl -s https://api.github.com/repos/LGFae/swww/releases/latest)
 
-ARCHIVE="swww-x86_64-unknown-linux-musl.tar.gz"
+TAG=$(echo "$LATEST" | grep '"tag_name"' | cut -d '"' -f4)
 
-curl -LO "https://github.com/LGFae/swww/releases/download/${LATEST}/${ARCHIVE}"
+ASSET=$(echo "$LATEST" | grep browser_download_url | grep linux | grep x86_64 | grep tar.gz | cut -d '"' -f4 | head -n 1)
 
-tar -xzf "$ARCHIVE"
+if [ -z "$ASSET" ]; then
+  echo "No se pudo encontrar el binario de swww"
+  exit 1
+fi
 
-sudo install -Dm755 swww /usr/local/bin/swww
-sudo install -Dm755 swww-daemon /usr/local/bin/swww-daemon
+curl -L -o swww.tar.gz "$ASSET"
+
+tar -xzf swww.tar.gz
+
+sudo find . -type f -name "swww*" -exec install -Dm755 {} /usr/local/bin/ \;
 
 rm -rf ~/.cache/swww/*
-cd -
+cd - >/dev/null
 
-echo ""
 echo "Instalación completa"
 echo "Reinicia sesión para aplicar Zsh como shell por defecto."

@@ -55,30 +55,22 @@ echo "Instalando recursos..."
 mkdir -p ~/.config/assets/
 cp -rf assets/resources/* ~/.config/assets/
 
-echo "Instalando swww..."
+echo "Instalando swww desde source..."
 
 mkdir -p ~/.cache/swww
+rm -rf ~/.cache/swww/*
 cd ~/.cache/swww
 
-LATEST=$(curl -s https://api.github.com/repos/LGFae/swww/releases/latest)
+git clone --depth 1 https://github.com/LGFae/swww.git
+cd swww
 
-TAG=$(echo "$LATEST" | grep '"tag_name"' | cut -d '"' -f4)
+cargo build --release
 
-ASSET=$(echo "$LATEST" | grep browser_download_url | grep linux | grep x86_64 | grep tar.gz | cut -d '"' -f4 | head -n 1)
+sudo install -Dm755 target/release/swww /usr/local/bin/swww
+sudo install -Dm755 target/release/swww-daemon /usr/local/bin/swww-daemon
 
-if [ -z "$ASSET" ]; then
-  echo "No se pudo encontrar el binario de swww"
-  exit 1
-fi
-
-curl -L -o swww.tar.gz "$ASSET"
-
-tar -xzf swww.tar.gz
-
-sudo find . -type f -name "swww*" -exec install -Dm755 {} /usr/local/bin/ \;
-
-rm -rf ~/.cache/swww/*
-cd - >/dev/null
+cd ~
+rm -rf ~/.cache/swww
 
 echo "Instalación completa"
 echo "Reinicia sesión para aplicar Zsh como shell por defecto."

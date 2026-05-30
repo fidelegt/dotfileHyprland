@@ -1,0 +1,123 @@
+@import "wallust-colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+/* 🔥 Barra transparente */
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    color: @foreground;
+}
+
+/* 🧩 Workspaces */
+#workspaces button {
+    padding: 5px;
+    color: @color7;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: @foreground;
+}
+
+#workspaces button.focused {
+    color: @background;
+    background: @color4;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: @background;
+    background: @color1;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: @color5;
+    color: @background; 
+    border-radius: 10px;
+}
+
+/* 🔥 módulos (cards) */
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#workspaces,
+#tray,
+#backlight {
+    background: alpha(@color0, 0.8); /* 🔥 clave */
+    color: @foreground;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 5px;
+}
+
+/* 🎨 bordes redondeados */
+#backlight {
+    border-radius: 10px 0px 0px 10px;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#workspaces {
+    border-radius: 10px;
+    margin-left: 10px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#cpu {
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+#memory {
+    border-radius: 10px 0px 0px 10px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* 🎯 colores específicos */
+#clock {
+    color: @color6;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+#network {
+    color: @color4;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#pulseaudio {
+    color: @color5;
+}
+
+#pulseaudio.microphone {
+    color: @color5;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 5px;
+}
+
+#battery {
+    color: @color2;
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}

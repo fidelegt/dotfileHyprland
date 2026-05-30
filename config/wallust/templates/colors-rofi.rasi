@@ -1,0 +1,39 @@
+* {
+    prompt-text: {{color0}};
+    prompt-background: transparent;
+
+    normal-text: {{foreground}};
+    normal-background: transparent;
+
+    window-border: {{color4}};
+    window-background: {{color6}}0D;
+
+    scrollbar-filled: {{color4}};
+    scrollbar-empty: {{color0}};
+
+    error-message: {{color7}};
+    error-message-border: {{color15}};
+bg0: {{background}}E6;
+    bg1: {{color0}}CC;
+    bg2: {{color0}}99;
+    bg3: {{color8}};
+
+    fg0: {{foreground}};
+    fg1: {{color7}};
+    fg2: {{color8}};
+
+    red: {{color1}};
+    green: {{color2}};
+    yellow: {{color3}};
+    blue: {{color4}};
+    magenta: {{color5}};
+    cyan: {{color6}};
+
+    accent: {{color4}};
+    urgent: {{color1}};
+}
+
+element selected {
+    background: {{color2}};
+    text-color: {{color4}};
+}

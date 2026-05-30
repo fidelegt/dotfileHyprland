@@ -1,0 +1,124 @@
+# ===== BASE SISTEMA =====
+base
+base-devel
+linux
+linux-firmware
+networkmanager
+bluez
+bluez-utils
+iwd
+
+# ===== DISPLAY MANAGER =====
+gdm
+
+# ===== WAYLAND / HYPRLAND CORE =====
+hyprland
+hypridle
+hyprlock
+hyprpicker
+xdg-desktop-portal-hyprland
+xorg-server
+xorg-xinit
+
+# ===== AUDIO =====
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
+pavucontrol
+
+# ===== UI / SHELL =====
+waybar
+rofi
+rofi-calc
+rofi-emoji
+dunst
+kitty
+qt5-wayland
+qt6-wayland
+qt5ct
+qt6ct
+
+# ===== UTILIDADES HYPRLAND =====
+grim
+slurp
+wl-clipboard
+brightnessctl
+
+# ===== RED / SISTEMA =====
+dnsmasq
+iptables
+ufw
+openssh
+rsync
+
+# ===== FILESYSTEM / HARDWARE =====
+btrfs-progs
+lvm2
+efibootmgr
+
+# ===== TERMINAL / CLI =====
+zsh
+starship
+neovim
+git
+fastfetch
+btop
+htop
+fzf
+fd
+jq
+wget
+nano
+ncdu
+
+# ===== ARCHIVOS / UI =====
+thunar
+xdg-utils
+gvfs-dnssd
+udiskie
+
+# ===== MULTIMEDIA =====
+mpv
+vlc
+gimp
+imagemagick
+
+# ===== DEV =====
+nodejs
+npm
+python-pip
+go
+cmake
+ninja
+
+# ===== DOCUMENTOS =====
+libreoffice-fresh
+okular
+zathura
+zathura-pdf-mupdf
+
+# ===== VIRTUALIZACION (opcional pero común) =====
+qemu-desktop
+virt-manager
+libvirt
+swtpm
+
+# ===== NETWORK GUI =====
+network-manager-applet
+
+# ===== NOTIFICACIONES / CONTROL =====
+pamixer
+
+# ===== FONTS (MINIMO RECOMENDADO) =====
+noto-fonts
+noto-fonts-emoji
+ttf-jetbrains-mono-nerd
+ttf-fira-code
+
+# ===== OTROS =====
+cups
+flatpak
+zoxide
+stow

@@ -1,0 +1,23 @@
+# ===== AUR CORE =====
+paru
+
+# ===== TEMAS / UI =====
+kvantum-theme-catppuccin-git
+wallust-git
+
+# ===== APPS =====
+enpass-bin
+spotify
+spicetify-cli
+localsend
+rustdesk-bin
+
+# ===== UTILIDADES =====
+wlogout
+xwaylandvideobridge
+ripdrag
+peaclock
+
+# ===== GAMING =====
+portproton
+prismlauncher

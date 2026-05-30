@@ -9,14 +9,6 @@ if command -v paru &>/dev/null; then
   paru -S --needed - <packages/aur.txt
 fi
 
-echo "Instalando paquetes Flatpak..."
-
-if command -v flatpak &>/dev/null; then
-  while read -r pkg; do
-    [ -n "$pkg" ] && flatpak install -y flathub "$pkg"
-  done <packages/flatpak.txt
-fi
-
 echo "Copiando configuraciones..."
 
 mkdir -p ~/.config

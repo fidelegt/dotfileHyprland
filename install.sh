@@ -57,9 +57,9 @@ cp -rf assets/resources/* ~/.config/assets/
 
 echo "Instalando swww desde source..."
 
-mkdir -p ~/.cache/swww
-rm -rf ~/.cache/swww/*
-cd ~/.cache/swww
+mkdir -p ~/Downloads/swww
+rm -rf ~/Downloads/swww/*
+cd ~/Downloads/swww
 
 git clone --depth 1 https://github.com/LGFae/swww.git
 cd swww
@@ -70,7 +70,7 @@ sudo install -Dm755 target/release/swww /usr/local/bin/swww
 sudo install -Dm755 target/release/swww-daemon /usr/local/bin/swww-daemon
 
 cd ~
-rm -rf ~/.cache/swww
+rm -rf ~/Downloads/swww
 
 echo "Instalación completa"
 echo "Reinicia sesión para aplicar Zsh como shell por defecto."

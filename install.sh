@@ -55,8 +55,24 @@ echo "Instalando recursos..."
 mkdir -p ~/.config/assets/
 cp -rf assets/resources/* ~/.config/assets/
 
-echo "Configurando swww..."
+echo "Instalando swww..."
+
 mkdir -p ~/.cache/swww
+cd ~/.cache/swww
+
+LATEST=$(curl -s https://api.github.com/repos/LGFae/swww/releases/latest | grep tag_name | cut -d '"' -f4)
+
+ARCHIVE="swww-x86_64-unknown-linux-musl.tar.gz"
+
+curl -LO "https://github.com/LGFae/swww/releases/download/${LATEST}/${ARCHIVE}"
+
+tar -xzf "$ARCHIVE"
+
+sudo install -Dm755 swww /usr/local/bin/swww
+sudo install -Dm755 swww-daemon /usr/local/bin/swww-daemon
+
+rm -rf ~/.cache/swww/*
+cd -
 
 echo ""
 echo "Instalación completa"

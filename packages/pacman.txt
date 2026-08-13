@@ -106,3 +106,4 @@ zoxide
 stow
 rust
 cargo
+yazi

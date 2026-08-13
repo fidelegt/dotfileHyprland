@@ -25,12 +25,12 @@ color_space = "salience"
 # softlight - softlight16 - softlightcomp - softlightcomp16
 # saliencedark - saliencedarkbalanced - saliencedarkdistributed - saliencedarklow (each has the 16 variations)
 # salienceligh - saliencelightbalanced - saliencelightdistributed - saliencelightlow (each has the 16 variations)
-palette = "saliencedark"
+palette = "salience"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
 # with your images. The reference color for the contrast is the background color.
-#check_contrast = true
+check_contrast = true
 
 # Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
 # usually something higher than 50 increases the saturation and below
@@ -55,6 +55,7 @@ nvim = { template = "/home/developer/.config/wallust/templates/nvim.lua", target
 kitty = { template = "/home/developer/.config/wallust/templates/kitty.conf", target = "~/.config/kitty/wallust-colors.conf" }
 wlogout= { template = '/home/developer/.config/wallust/templates/waybar.css', target = '~/.config/wlogout/wallust-colors.css' }
 rofi= { template = '/home/developer/.config/wallust/templates/colors-rofi.rasi', target = '~/.config/rofi/wallust-colors.rasi' }
+dunst= { template = '/home/developer/.config/wallust/templates/dunst.conf', target = '~/.config/dunst/dunstrc.d/95-colors-wallust.conf' }
 [hooks]
 # Run commands when wallust is invoked. Useful to avoid scripting.
 #wallpaper = """swww img "$(find ~/Media/Pictures/Wallpapers -iregex '.*.\\(jpg\\|jpeg\\|png\\|gif\\)' -type f | shuf -n 1)" """

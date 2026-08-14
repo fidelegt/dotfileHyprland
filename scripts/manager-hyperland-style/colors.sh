@@ -18,6 +18,20 @@ done
 # Lanzar limpio
 nohup waybar >/dev/null 2>&1 &
 
+# ---------- DUNST ----------
+pkill -x dunst 2>/dev/null
+
+# Esperar a que Dunst termine
+while pgrep -x dunst >/dev/null; do
+  sleep 0.05
+done
+
+# Lanzar Dunst
+nohup dunst >/dev/null 2>&1 &
+
+# Darle un pequeño margen para registrar DBus
+sleep 0.2
+
 # ---------- NVIM (opcional) ----------
 # Recarga en instancias abiertas (si usas server)
 if command -v nvim >/dev/null; then
